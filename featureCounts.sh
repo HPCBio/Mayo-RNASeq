@@ -11,7 +11,7 @@
 cd ~/mouse-rnaseq-2020/
 
 #Load the Subread module; name may change in future so check each time with 'module avail' on command line
-module load Subread/1.6.3-IGB-gcc-4.9.4
+module load Subread/2.0.0-IGB-gcc-8.2.0
 
 #Set up variable to pull out base file names
 line=$(sed -n -e "$SLURM_ARRAY_TASK_ID p" src/basenames.txt)
