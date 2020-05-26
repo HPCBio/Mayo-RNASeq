@@ -14,7 +14,7 @@ $ cd mouse-rnaseq-2020/src/
 $ sbatch STAR-index-mouse-genome.sh
 
 ## Run STAR alignments on 4 mouse samples. 
-### This takes ~3 minutes per sample, but only runs 2 samples at once, so could take 6-12 minutes total depending on how long they're waiting for resources to open up. Note that it will help a lot if they are not logged into any nodes interactively. Otherwise, it could take much longer. 
+### This takes ~1 minute per sample, but only runs 2 samples at once, so could take 2-4 minutes total depending on how long they're waiting for resources to open up.
 $ sbatch STAR-alignment.sh
 
 ## Run featureCounts on 4 alignment files to get gene counts. 
