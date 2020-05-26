@@ -21,5 +21,24 @@ $ sbatch STAR-alignment.sh
 ### This takes ~1 minute per sample to run. Runs all 4 samples at once, so could take 1-4 minutes total depending on how long they're waiting for resources to open up.
 $ sbatch featureCounts.sh
 
-## Run edgeR statistical analysis. This takes ~X minutes to run
-$ sbatch edgeR.sh  #NOT WORKING YET
+## Run multiqc to collate STAR and featureCounts numbers. This takes ~1 min to run.
+$ sbatch multiqc_summary.sh
+
+*OUTPUT* in results/ directory: 
+1. multiqc_report.html 
+2. ReadFatePlot.jpeg 
+3. Targets_Final.txt
+
+Download these to VMs to inspect
+
+## Run edgeR statistical analysis. This takes ~30 seconds to run
+$ sbatch edgeR.sh  
+
+*OUTPUT* in results/edgeR/ directory:
+1. MDSclustering.jpeg  
+2. NumSigGenes_FDR0.05.csv  
+3. RawCounts.txt  
+4. t8_vs_t0_AllResults.txt  
+5. t8_vs_t0_MeanDifferencePlot.jpeg
+
+Download these to VMs to inspect
