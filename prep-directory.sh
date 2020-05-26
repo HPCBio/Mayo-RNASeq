@@ -5,6 +5,8 @@
 #SBATCH -J prep-directory
 #SBATCH -p classroom
 
+# This script sets up the directory structure and makes copies or links to the necessary files
+# for the RNA-Seq module..
 
 #Create main project directory
 cd ~/
@@ -25,4 +27,9 @@ ln -s /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/data/genome/mouse_chr
 cd ../../src/
 cp /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/src/Mayo-RNASeq/* ./
 
+# Create copy of Targets0.txt
+cd ../results
+cp /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/results/Targets0.txt ./
+
+echo "Finished prep-directory.sh"
 
