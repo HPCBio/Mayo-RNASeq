@@ -17,9 +17,9 @@ mkdir data/rawseq data/genome
 
 # Create soft links (a.k.a shortcuts) to the raw data
 cd data/rawseq/
-ln -s /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/data/rawseq/*.fastq
+ln -s /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/data/rawseq/*.fastq .
 cd ../genome/
-ln -s /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/data/genome/mouse_chr12.* 
+ln -s /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/data/genome/mouse_chr12.* . 
 
 # Create copies of scripts
 cd ../../src/
