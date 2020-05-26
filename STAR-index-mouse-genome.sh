@@ -18,7 +18,8 @@ module load STAR/2.7.3a-IGB-gcc-8.2.0
 mkdir -p data/genome/STAR-2.7.3a_mouse-chr12_Index/
 
 #Make the mouse STAR index
-date
+echo "Start STAR index generation"
+
 STAR --runThreadN $SLURM_NTASKS \
      --runMode genomeGenerate \
      --genomeDir data/genome/STAR-2.7.3a_mouse-chr12_Index \
@@ -26,5 +27,6 @@ STAR --runThreadN $SLURM_NTASKS \
      --limitGenomeGenerateRAM 32000000000 \
      --genomeSAindexNbases 12 \
      --outTmpDir /scratch/$SLURM_JOB_ID
-date
+
+echo "End STAR index generation"
 
