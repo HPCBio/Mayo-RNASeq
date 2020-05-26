@@ -18,7 +18,7 @@ $ sbatch STAR-index-mouse-genome.sh
 $ sbatch STAR-alignment.sh
 
 ## Run featureCounts on 4 alignment files to get gene counts. 
-### This takes ~1 minute per sample to run. Runs all 4 samples at once, so may take up to 4 minutes depending on how long they're waiting for resources.
+### This takes ~1 minute per sample to run. Runs all 4 samples at once, so could take 1-4 minutes total depending on how long they're waiting for resources to open up.
 $ sbatch featureCounts.sh
 
 ## Run edgeR statistical analysis. This takes ~X minutes to run
