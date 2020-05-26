@@ -19,4 +19,5 @@ $ sbatch STAR-alignment.sh
 ## Run featureCounts on 4 alignment files to get gene counts. This takes ~X minutes to run.
 $ sbatch featureCounts.sh
 
-## ADD EDGER HERE
+## Run edgeR statistical analysis. This takes ~X minutes to run
+$ sbatch edgeR.sh  #NOT WORKING YET
