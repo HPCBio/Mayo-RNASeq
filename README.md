@@ -7,9 +7,11 @@ $ cd ~/
 
 $ cp /home/classroom/hpcbio/mayo-rnaseq/mouse-rnaseq-2020/src/Mayo-RNASeq/prep-directory.sh ./
 
-$ sbatch prep-directory.sh
+$ sbatch prep-directory.sh   #this finishes almost immediately
 
-$ sbatch STAR-index-mouse-genome.sh
+$ cd mouse-rnaseq-2020/src/
+
+$ sbatch STAR-index-mouse-genome.sh   #this takes ~10 min
 
 $ sbatch STAR-alignment.sh
 
