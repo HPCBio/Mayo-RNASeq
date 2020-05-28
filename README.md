@@ -13,13 +13,28 @@ $ cd mouse-rnaseq-2020/src/
 
 $ sbatch STAR-index-mouse-genome.sh
 
+*OUTPUT* in data/genome/
+1. STAR-2.7.3a_mouse-chr12_Index/
+
 ## Run STAR alignments on 4 mouse samples. 
 ### This takes ~1 minute per sample, but only runs 2 samples at once, so could take 2-4 minutes total depending on how long they're waiting for resources to open up.
 $ sbatch STAR-alignment.sh
 
+*OUTPUT* in results/star/
+1. \*.Aligned.sortedByCoord.out.bam
+2. \*_Log.final.out
+3. \*_Log.out
+4. \*_Log.progress.out
+5. \*_SJ.out.tab
+6. \*_STARgenome/
+
 ## Run featureCounts on 4 alignment files to get gene counts. 
 ### This takes ~1 minute per sample to run. Runs all 4 samples at once, so could take 1-4 minutes total depending on how long they're waiting for resources to open up.
 $ sbatch featureCounts.sh
+
+*OUTPUT* in results/featureCounts/
+1. \*.txt
+2. \*.txt.summary
 
 ## Run multiqc to collate STAR and featureCounts numbers. This takes ~1 min to run.
 $ sbatch multiqc_summary.sh
