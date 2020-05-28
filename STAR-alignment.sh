@@ -33,3 +33,11 @@ STAR --runThreadN $SLURM_NTASKS \
      --outTmpDir /scratch/${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}
 
 echo "end STAR alignment"
+
+echo "Start creating index of BAM file"
+
+module load SAMtools/1.10-IGB-gcc-8.2.0
+
+samtools index results/star/${line}_Aligned.sortedByCoord.out.bam
+
+echo "Finished creating index of BAM file"
