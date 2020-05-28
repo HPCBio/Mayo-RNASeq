@@ -28,5 +28,9 @@ STAR --runThreadN $SLURM_NTASKS \
      --genomeSAindexNbases 12 \
      --outTmpDir /scratch/$SLURM_JOB_ID
 
+# NOTE: If we were using the full version of the mouse genome, we would not need 
+# "--genomeSAindex 12" option. This is only required of small genomes, and when
+# we choose to only use one chromosome, it looks like a small genome to STAR.
+
 echo "End STAR index generation"
 

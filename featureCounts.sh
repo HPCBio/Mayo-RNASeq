@@ -29,4 +29,11 @@ featureCounts -T 1 -s 2 -g gene_id -t exon \
 -a data/genome/mouse_chr12.gtf \
 results/star/${line}_Aligned.sortedByCoord.out.bam
 
+# NOTE: The -t option describes the "feature" that this software will look for in our GTF file.
+# In our case it will identify all the exons listed in our GTF and only count reads that align
+# to an exon at least partially. The -g option describes the "meta-feature" that should
+# also be present in our GTF. Once, featureCounts counts all the reads aligning to exons, it 
+# will group those counts by "gene_id" (i.e. by gene). "gene_id" is often chosen as a meta-feature
+# for the -g option because it usually describes an ID that is unique for every gene in GTF files..  
+
 echo "end featureCounts"
